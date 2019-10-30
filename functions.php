@@ -10,3 +10,16 @@ function addCustomThemeFiles_F4(){
 
 add_action('wp_enqueue_scripts', 'addCustomThemeFiles_F4');
 add_theme_support('post-thumbnails', array('post'));
+
+function addCustomMenus_F4(){
+    add_theme_support('menus');
+    register_nav_menu('top_navigation', __('The top navigation is located at the top of each page.', '1902Custom'));
+    register_nav_menu('bottom_navigation', __('The bottom navigation is located at the bottom of each page.', '1902Custom'));
+    register_nav_menu('side_navigation', __('The side navigation is located on the left of each page.', '1902Custom'));
+}
+add_action('after_setup_theme', 'addCustomMenus_F4');
+
+function register_navwalker(){
+    require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+}
+add_action( 'after_setup_theme', 'register_navwalker' );

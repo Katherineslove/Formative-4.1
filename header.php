@@ -2,7 +2,8 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="utf-8">
-    <title>Embrace Design</title>
+    <title></title>
+    <?php wp_head(); ?>
 </head>
 <body>
 
@@ -26,10 +27,5 @@
                 ) );
                 ?>
             </div>
-            <form action="<?php echo home_url();?>" method="get" class="d-flex justify-content-center">
-                <input type="hidden" name="post_type" value="post, movie"></input>
-                <input name="s" type="text" class="form-control" aria-describedby="searchPosts" placeholder="Search Posts" value="<?php the_search_query(); ?>">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
         </nav>
     <?php endif; ?>
