@@ -22,8 +22,8 @@
     <div class="container">
         <div class="row">
             <?php while( have_posts() ): the_post(); ?>
-                <div class="col-12 cold-md-4">
-                    <div class="card mb-2 mt-2">
+                <div class="col-12 col-md-6">
+                    <div class="card h-100 borderColour">
                         <h5 class="card-header"><?php the_title(); ?></h5>
                         <div class="card-body">
                             <div class="row">
@@ -47,7 +47,7 @@
                                         <?php endif; ?>
                                     </div>
                                     <?php if( !is_singular() ): ?>
-                                        <a href="<?php the_permalink(); ?>" class="btn btn-primary">Read More</a>
+                                        <?php include('templates/button.php'); ?>
                                     <?php endif; ?>
                                 </div>
                             </div>

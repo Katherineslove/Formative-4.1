@@ -1,3 +1,11 @@
+.borderColour{
+    border: 1px solid #f1833b;
+}
+
+.btnColour{
+    border: 1px solid #f1833b;
+}
+
 .headerImage{
     width: 100vw;
     height: 60vh;

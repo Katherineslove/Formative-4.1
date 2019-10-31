@@ -1,3 +1,5 @@
+<?php require('templates/button.php'); ?>
+
 <?php get_header(); ?>
 
 <div class="container">
@@ -33,7 +35,7 @@
                                         <?php endif; ?>
 
                                         <?php if (!is_single() ): ?>
-                                            <a href="<?php the_permalink(); ?>" class="btn btn-primary">Go Somewhere</a>
+                                            <?php include('templates/button.php'); ?>
                                         <?php endif; ?>
                                     </div>
                                 <?php else: ?>
@@ -45,7 +47,7 @@
                                         <?php the_content(); ?>
                                     <?php endif; ?>
                                     <?php if (!is_single() ): ?>
-                                        <a href="<?php the_permalink(); ?>" class="btn btn-primary">Go Somewhere</a>
+                                        <?php include('templates/button.php'); ?>
                                     <?php endif; ?>
 
                                 <?php endif; ?>
