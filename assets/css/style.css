@@ -8,6 +8,15 @@
     align-items: center;
 }
 
+.headerText {
+    width: 40vw;
+    height: 10vh;
+    background-color: #373435;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f1833b;
+}
 
 #sideNav li{
     position: relative;
