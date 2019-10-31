@@ -13,6 +13,7 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#top_navigation" aria-controls="top_navigation" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <img src="assets/images/logo.png" alt="..." class="img-thumbnail mr-3">
                 <a class="navbar-brand" href="#"><?php echo get_bloginfo('name'); ?></a>
                 <?php
                 wp_nav_menu( array(
