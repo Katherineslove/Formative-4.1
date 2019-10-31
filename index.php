@@ -1,5 +1,3 @@
-<?php require('templates/button.php'); ?>
-
 <?php get_header(); ?>
 
 <div class="container">

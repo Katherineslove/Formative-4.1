@@ -24,6 +24,8 @@
     justify-content: center;
     align-items: center;
     color: #f1833b;
+    border-radius: .25rem;
+    font-family: 'EB Garamond', serif;
 }
 
 #sideNav li{

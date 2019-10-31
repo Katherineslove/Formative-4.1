@@ -13,7 +13,7 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#top_navigation" aria-controls="top_navigation" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <img src="assets/images/logo.png" alt="..." class="img-thumbnail mr-3">
+                <img src="assets/images/logo.png" class="img-thumbnail mr-3">
                 <a class="navbar-brand" href="#"><?php echo get_bloginfo('name'); ?></a>
                 <?php
                 wp_nav_menu( array(
@@ -31,7 +31,7 @@
             <form action="<?php echo home_url();?>" method="get" class="d-flex justify-content-center">
                 <input type="hidden" name="post_type" value="page"></input>
                 <input name="s" type="text" class="form-control" aria-describedby="searchPosts" placeholder="Search Posts" value="<?php the_search_query(); ?>">
-                <button class="btn btn-outline-success ml-3" type="submit">Search</button>
+                <?php include('templates/searchButton.php'); ?>
             </form>
         </nav>
     <?php endif; ?>

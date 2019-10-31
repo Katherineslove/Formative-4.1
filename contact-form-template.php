@@ -30,7 +30,7 @@ Template Post Type: page
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Add your message here..."></textarea>
                         </div>
                         <div class="row  d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <?php include('templates/submitButton.php'); ?>
                         </div>
                     </form>
                 </div>
