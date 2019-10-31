@@ -46,9 +46,9 @@
                                             <?php the_content(); ?>
                                         <?php endif; ?>
                                     </div>
-                                    <?php if( !is_singular() ): ?>
+                                    <!-- <?php if( !is_singular() ): ?>
                                         <?php include('templates/button.php'); ?>
-                                    <?php endif; ?>
+                                    <?php endif; ?> -->
                                 </div>
                             </div>
                         </div>
