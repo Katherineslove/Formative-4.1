@@ -10,7 +10,7 @@ Template Post Type: page
 <div class="container-fluid">
     <div class="row m-2">
         <div class="col-6">
-            <div class="card mt-3">
+            <div class="card mt-3 borderColour">
                 <h5 class="card-header"><?php the_title(); ?></h5>
                 <div class="card-body">
                     <form>

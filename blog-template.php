@@ -1,3 +1,10 @@
+<?php
+/*
+Template Name: Blog Page
+Template Post Type: page
+*/
+?>
+
 <?php get_header(); ?>
 
 <div class="container mt-3">
@@ -54,5 +61,7 @@
         <?php endif; ?>
     </div>
 </div>
+
+
 
 <?php get_footer(); ?>

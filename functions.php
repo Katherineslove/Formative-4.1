@@ -13,26 +13,29 @@ add_action("wp_enqueue_scripts", "addCustomThemeFiles_F4");
 
 add_theme_support("post-thumbnails", array("post"));
 
+add_image_size("icon", 50, 50, true);
+
 function addCustomMenus_F4(){
     add_theme_support("menus");
     register_nav_menu("top_navigation", __("The top navigation is located at the top of each page.", "1902Custom"));
     register_nav_menu("bottom_navigation", __("The bottom navigation is located at the bottom of each page.", "1902Custom"));
     register_nav_menu("side_navigation", __("The side navigation is located on the left of each page.", "1902Custom"));
 }
+
 add_action("after_setup_theme", "addCustomMenus_F4");
 
 function register_navwalker(){
     require_once get_template_directory() . "/class-wp-bootstrap-navwalker.php";
 }
-add_action( "after_setup_theme", "register_navwalker" );
+add_action( 'after_setup_theme', 'register_navwalker' );
 
-// register_default_headers(array(
-//     "defaultImage" => array(
-//         "url"           => get_template_directory_uri() . "/assets/images/coast.jpeg",
-//         "thumbnail_url" => get_template_directory_uri() . "/assets/images/coast.jpeg",
-//         "description"   => __("The default image for the custom header.", "1902Custom")
-//     )
-// ));
+register_default_headers(array(
+    'defaultImage' => array(
+        'url'           => get_template_directory_uri() . '/assets/images/coast.jpeg',
+        'thumbnail_url' => get_template_directory_uri() . '/assets/images/coast.jpeg',
+        'description'   => __('The default image for the custom header.', '1902Custom')
+    )
+));
 
 $customHeaderDefaults = array(
     "width" => 1280,
@@ -42,16 +45,8 @@ $customHeaderDefaults = array(
 add_theme_support("custom-header", $customHeaderDefaults);
 
 add_theme_support('wp-block-styles');
+
 add_theme_support('post-formats', array('video', 'audio', 'image', 'gallery'));
-
-function add_google_fonts() {
-    wp_enqueue_style( " add_google_fonts ", " https://fonts.googleapis.com/css?family=EB+Garamond|Karla|Khula:400,700&display=swa", false );
-}
-
-add_action( "wp_enqueue_scripts", "add_google_fonts" );
-
-
-
 
 function themename_custom_logo_setup() {
     $defaults = array(
@@ -64,3 +59,5 @@ function themename_custom_logo_setup() {
     add_theme_support( 'custom-logo', $defaults );
 }
 add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
+
+require_once get_template_directory() . '/inc/customizer.php';
