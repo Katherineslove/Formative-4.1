@@ -26,13 +26,14 @@ function register_navwalker(){
 }
 add_action( "after_setup_theme", "register_navwalker" );
 
-register_default_headers(array(
-    "defaultImage" => array(
-        "url"           => get_template_directory_uri() . "/assets/images/coast.jpeg",
-        "thumbnail_url" => get_template_directory_uri() . "/assets/images/coast.jpeg",
-        "description"   => __("The default image for the custom header.", "1902Custom")
-    )
-));
+// register_default_headers(array(
+//     "defaultImage" => array(
+//         "url"           => get_template_directory_uri() . "/assets/images/coast.jpeg",
+//         "thumbnail_url" => get_template_directory_uri() . "/assets/images/coast.jpeg",
+//         "description"   => __("The default image for the custom header.", "1902Custom")
+//     )
+// ));
+
 $customHeaderDefaults = array(
     "width" => 1280,
     "height" => 720,
@@ -40,9 +41,26 @@ $customHeaderDefaults = array(
 );
 add_theme_support("custom-header", $customHeaderDefaults);
 
+add_theme_support('wp-block-styles');
+add_theme_support('post-formats', array('video', 'audio', 'image', 'gallery'));
 
 function add_google_fonts() {
     wp_enqueue_style( " add_google_fonts ", " https://fonts.googleapis.com/css?family=EB+Garamond|Karla|Khula:400,700&display=swa", false );
 }
 
 add_action( "wp_enqueue_scripts", "add_google_fonts" );
+
+
+
+
+function themename_custom_logo_setup() {
+    $defaults = array(
+        'height'      => 100,
+        'width'       => 400,
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => array( 'site-title', 'site-description' ),
+    );
+    add_theme_support( 'custom-logo', $defaults );
+}
+add_action( 'after_setup_theme', 'themename_custom_logo_setup' );

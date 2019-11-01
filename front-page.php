@@ -19,40 +19,11 @@
 <?php endif; ?>
 
 <?php if( have_posts() ): ?>
-    <div class="container">
+    <div class="container py-5">
         <div class="row">
             <?php while( have_posts() ): the_post(); ?>
-                <div class="col-12 col-md-6">
-                    <div class="card h-100 borderColour">
-                        <h5 class="card-header"><?php the_title(); ?></h5>
-                        <div class="card-body">
-                            <div class="row">
-                                <?php if(has_post_thumbnail()): ?>
-                                    <?php if( is_home() ): ?>
-                                        <div class="col-12 col-md-3">
-                                            <?php the_post_thumbnail('medium', ['class' => 'img-fluid']); ?>
-                                        </div>
-                                    <?php else: ?>
-                                        <div class="col-12 text-center mb-5">
-                                            <?php the_post_thumbnail('large', ['class' => 'img-fluid']); ?>
-                                        </div>
-                                    <?php endif; ?>
-                                <?php endif; ?>
-                                <div class="col">
-                                    <div>
-                                        <?php if( is_home() ): ?>
-                                            <?php the_excerpt() ; ?>
-                                        <?php else: ?>
-                                            <?php the_content(); ?>
-                                        <?php endif; ?>
-                                    </div>
-                                    <!-- <?php if( !is_singular() ): ?>
-                                        <?php include('templates/button.php'); ?>
-                                    <?php endif; ?> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-12 col-md-4 mb-3">
+                    <?php get_template_part('templates/content', get_post_format()); ?>
                 </div>
             <?php endwhile; ?>
         </div>

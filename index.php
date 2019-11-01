@@ -2,18 +2,6 @@
 
 <div class="container">
     <div class="row">
-        <?php if(has_nav_menu('side_navigation')): ?>
-            <div class="col-12 col-md-3">
-                <div class="card h-80 mb-2 mt-2 p-2">
-                    <?php wp_nav_menu( array(
-                        'theme_location' => 'side_navigation',
-                        'menu_class' => 'list-group list-group-flush',
-                        'container' => '',
-                        'menu_id' => 'sideNav'
-                    )); ?>
-                </div>
-            </div>
-        <?php endif; ?>
         <div class="col">
             <?php if( have_posts() ): ?>
                 <?php while( have_posts() ): the_post(); ?>
@@ -47,9 +35,8 @@
                                     <?php if (!is_single() ): ?>
                                         <?php include('templates/button.php'); ?>
                                     <?php endif; ?>
-
-                                <?php endif; ?>
-                            </div>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 <?php endwhile; ?>

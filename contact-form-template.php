@@ -37,19 +37,25 @@ Template Post Type: page
             </div>
         </div>
         <div class="col-6">
-            <div class="card mt-3 border-0">
-                <div class="card-body">
-                    We welcome all enquiries about our products, customised work and prototyping. If you have an inquiry about 3D printing a
-                    model please send us the STL. file, tell us the preferred dimensions and the material type and colour preference. If you
-                    have an inquiry about a custom wood or metal build please email us the plans, Height/width/depth measurements for all parts
-                    and material preference. If you have a custom glassware inquiry please send us the image you would like put onto the
-                    glass along with words if applicable to your design. If you have any other questions we are more than happy to answer them.
-                    At Embrace Design we value and protect your intellectual property rights. Your designs/plans will stay yours.
-                    Embrace design may ask to have a picture of the parts or product they made for you to put in their “Custom Orders photo gallery” on their website.
+            <?php if( have_posts() ): ?>
+                <?php while( have_posts() ): the_post(); ?>
+                    <div class="card mt-3 borderColour">
+                        <div class="card-body p-0">
+                            <?php if ( is_home() ): ?>
+                                <?php the_excerpt(); ?>
+                            <?php else: ?>
+                                <br>
+                                <?php the_content(); ?>
+                            <?php endif; ?>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            <?php endwhile; ?>
+        <?php endif; ?>
     </div>
 </div>
+</div>
+
+
 
 <?php get_footer(); ?>
