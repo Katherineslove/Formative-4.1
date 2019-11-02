@@ -11,15 +11,10 @@ function addCustomThemeFiles_F4(){
 
 add_action("wp_enqueue_scripts", "addCustomThemeFiles_F4");
 
-add_theme_support("post-thumbnails", array("post"));
-
-add_image_size("icon", 50, 50, true);
-
 function addCustomMenus_F4(){
     add_theme_support("menus");
-    register_nav_menu("top_navigation", __("The top navigation is located at the top of each page.", "1902Custom"));
-    register_nav_menu("bottom_navigation", __("The bottom navigation is located at the bottom of each page.", "1902Custom"));
-    register_nav_menu("side_navigation", __("The side navigation is located on the left of each page.", "1902Custom"));
+    register_nav_menu("top_navigation", __("The top navigation is located at the top of each page.", "F4Custom"));
+    register_nav_menu("bottom_navigation", __("The bottom navigation is located at the bottom of each page.", "F4Custom"));
 }
 
 add_action("after_setup_theme", "addCustomMenus_F4");
@@ -31,33 +26,17 @@ add_action( 'after_setup_theme', 'register_navwalker' );
 
 register_default_headers(array(
     'defaultImage' => array(
-        'url'           => get_template_directory_uri() . '/assets/images/coast.jpeg',
-        'thumbnail_url' => get_template_directory_uri() . '/assets/images/coast.jpeg',
-        'description'   => __('The default image for the custom header.', '1902Custom')
+        'url'           => get_template_directory_uri() . '/assets/images/banner.jpg',
+        'thumbnail_url' => get_template_directory_uri() . '/assets/images/banner.jpg',
+        'description'   => __('The default image for the custom header.', 'F4Custom')
     )
 ));
 
-$customHeaderDefaults = array(
+$customDefaultHeaderImage = array(
     "width" => 1280,
     "height" => 720,
-    "default-image" => get_template_directory_uri() . "/assets/images/coast.jpeg"
+    "default-image" => get_template_directory_uri() . "/assets/images/banner.jpg"
 );
-add_theme_support("custom-header", $customHeaderDefaults);
-
-add_theme_support('wp-block-styles');
-
-add_theme_support('post-formats', array('video', 'audio', 'image', 'gallery'));
-
-function themename_custom_logo_setup() {
-    $defaults = array(
-        'height'      => 100,
-        'width'       => 400,
-        'flex-height' => true,
-        'flex-width'  => true,
-        'header-text' => array( 'site-title', 'site-description' ),
-    );
-    add_theme_support( 'custom-logo', $defaults );
-}
-add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
+add_theme_support("custom-header", $customDefaultHeaderImage);
 
 require_once get_template_directory() . '/inc/customizer.php';

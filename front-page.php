@@ -20,16 +20,11 @@
     <div class="container py-5">
         <div class="row">
             <?php while( have_posts() ): the_post(); ?>
-                <?php if (get_theme_mod('1902_gridLayoutSetting') === 'grid'): ?>
                     <div class="col-12 col-md-4 mb-3">
-                        <?php get_template_part('templates/content', get_post_format()); ?>
+                        <div class="card h-100 mt-3 shadow">
+                            <?php get_template_part('templates/content', get_post_format()); ?>
+                        </div>
                     </div>
-                <?php elseif (get_theme_mod('1902_gridLayoutSetting') === 'rows'):?>
-                    <div class="col-12 mt-3">
-                        <?php get_template_part('templates/contentRows', get_post_format()); ?>
-                    </div>
-                <?php endif; ?>
-
             <?php endwhile; ?>
         </div>
     </div>

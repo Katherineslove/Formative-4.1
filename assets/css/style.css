@@ -21,17 +21,6 @@
     align-items: center;
     color: #f1833b;
     border-radius: .25rem;
-    font-family: 'EB Garamond', serif;
-}
-
-.displayImage{
-    width: 100vw;
-    height: 60vh;
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 #sideNav li{
