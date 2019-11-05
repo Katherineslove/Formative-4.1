@@ -32,7 +32,7 @@ function mytheme_customize_register($wp_customize) {
         'transport' => 'refresh',
     ));
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'F4_searchButtonControl', array(
-        'label'       => __( 'Search Bar Colour', 'F4Custom' ),
+        'label'       => __( 'Search Button Outline Colour', 'F4Custom' ),
         'description' => 'Change the Colour of the outline for the Search Button',
         'section'     => 'colors',
         'settings'    => 'F4_searchButtonColour',
