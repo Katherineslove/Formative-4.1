@@ -33,6 +33,4 @@ Template Post Type: page
     </div>
 </div>
 
-
-
 <?php get_footer(); ?>
