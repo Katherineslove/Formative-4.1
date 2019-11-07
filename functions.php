@@ -40,3 +40,4 @@ $customDefaultHeaderImage = array(
 add_theme_support("custom-header", $customDefaultHeaderImage);
 
 require_once get_template_directory() . '/inc/customizer.php';
+require_once get_template_directory() . '/inc/custom_fields.php';

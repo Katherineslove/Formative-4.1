@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="utf-8">
-    <title>Embrace Design</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Yoobee Assignment">
+    <meta name="keywords" content="HTML,CSS,PHP,WordPress">
+    <meta name="author" content="Katherine Love">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embrace Design - Wordpress</title>
     <?php wp_head(); ?>
 </head>
 <body>
